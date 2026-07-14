@@ -1648,6 +1648,131 @@
     to{ transform:translateX(36px); }
   }
 
+
+  /* ---------- complete responsive layer ---------- */
+  html{ text-size-adjust:100%; -webkit-text-size-adjust:100%; }
+  body{ min-width:320px; }
+  button,input,textarea,select{ font:inherit; }
+  .wrap{ width:min(100%, var(--max)); }
+  .project-card,.term,.about-card,.tl-card,.contact-box,.api-showcase{ min-width:0; }
+  .endpoint,.project-card p,.contact-link,.api-selected-endpoint{ overflow-wrap:anywhere; word-break:break-word; }
+
+  @media (max-width:1024px){
+    :root{ --max:940px; }
+    .wrap{ padding-inline:24px; }
+    .hero-inner{ gap:40px; grid-template-columns:minmax(0,1fr) minmax(360px,.9fr); }
+    .skill-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .contact-box{ padding:52px 42px; }
+  }
+
+  @media (max-width:900px){
+    nav{ padding:15px 22px; }
+    .nav-cta .btn{ display:none; }
+    .mobile-menu{ top:61px; padding:18px 22px 22px; max-height:calc(100vh - 61px); overflow-y:auto; }
+    .hero{ padding:118px 0 54px; }
+    .hero-inner{ grid-template-columns:1fr; gap:34px; }
+    .hero p.lede{ max-width:680px; }
+    .term{ width:100%; transform:none; }
+    .about,.skills,.experience,.work,.process{ padding-block:72px; }
+    .about-grid,.contact-box{ grid-template-columns:1fr; }
+    .project-grid{ grid-template-columns:1fr; }
+    .project-card:has(.flagship-preview){ grid-column:1 !important; }
+    .api-demo-grid{ grid-template-columns:1fr; }
+  }
+
+  @media (max-width:760px){
+    .wrap{ padding-inline:18px; }
+    .hero{ padding-top:104px; }
+    .hero h1{ font-size:clamp(34px,11vw,48px); line-height:1.04; }
+    .hero p.lede{ font-size:15.5px; }
+    .hero .actions{ gap:10px; margin-top:26px; }
+    .hero .actions .btn{ flex:1 1 180px; justify-content:center; }
+    .section-head{ margin-bottom:32px; }
+    .stats-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+    .stat{ padding:20px 14px; }
+    .skill-grid{ grid-template-columns:1fr; gap:14px; }
+    .tl-card{ padding:22px 18px; }
+    .timeline{ padding-left:26px; }
+    .tl-dot{ left:-26px; width:15px; height:15px; }
+    .tl-list{ grid-template-columns:1fr; }
+    .project-card{ padding:20px; }
+    .pc-top{ align-items:flex-start; }
+    .endpoint{ width:100%; font-size:10.5px; }
+    .project-video,.project-gif{ aspect-ratio:16/10; }
+    .project-card:has(.flagship-preview) .flagship-preview{
+      grid-template-columns:1fr;
+      min-height:auto;
+      padding:16px;
+    }
+    .project-card:has(.flagship-preview) .flagship-preview-node{ min-height:96px; }
+    .project-card:has(.flagship-preview) .flagship-preview-arrow{
+      transform:rotate(90deg);
+      text-align:center;
+    }
+    .project-card:has(.flagship-preview) .flagship-summary{ grid-template-columns:1fr; }
+    .api-header{ flex-direction:column; align-items:stretch; }
+    .api-header-actions{ width:100%; justify-content:space-between; flex-wrap:wrap; }
+    .api-pane pre{ overflow-x:auto; white-space:pre; }
+    .steps{ grid-template-columns:1fr; gap:24px; }
+    .step{ padding-right:0; display:grid; grid-template-columns:44px 1fr; column-gap:12px; }
+    .step .marker{ grid-row:1 / span 2; }
+    .step h4{ margin-top:0; align-self:center; }
+    .step p{ grid-column:2; margin-top:4px; }
+    .contact{ padding:78px 0 70px; }
+    .contact-box{ padding:34px 22px; border-radius:18px; }
+    .contact-link{ font-size:13.5px; padding:13px 14px; }
+    .video-modal{ padding:12px; }
+    .video-modal-dialog{ width:100%; border-radius:14px; }
+    .video-modal-dialog video{ max-height:66vh; }
+  }
+
+  @media (max-width:560px){
+    nav{ padding-inline:16px; }
+    .logo{ font-size:17px; }
+    .mobile-menu{ padding-inline:16px; }
+    .wrap{ padding-inline:14px; }
+    .eyebrow{ max-width:100%; white-space:normal; line-height:1.4; }
+    .hero{ padding-top:94px; }
+    .hero h1{ font-size:clamp(31px,12vw,42px); }
+    .hero .actions{ flex-direction:column; }
+    .hero .actions .btn{ width:100%; flex:none; }
+    .term-body{ padding:20px 15px 22px; font-size:11.5px; min-height:205px; }
+    .term-line{ gap:7px; }
+    .stats-grid{ grid-template-columns:1fr; }
+    .about,.skills,.experience,.work,.process{ padding-block:58px; }
+    .section-head h2{ font-size:clamp(26px,9vw,34px); }
+    .about-grid p{ font-size:15px; }
+    .about-card{ padding:22px 18px; }
+    .stack-pill{ font-size:11px; margin-right:5px; padding:5px 8px; }
+    .tl-head{ flex-direction:column; align-items:flex-start; }
+    .tl-date{ white-space:normal; text-align:center; }
+    .project-card{ padding:17px 14px; border-radius:14px; }
+    .shots-grid{ grid-template-columns:1fr; }
+    .stack-tags{ gap:6px; }
+    .stack-tags span{ font-size:10px; padding:4px 7px; }
+    .feat-panel ul{ grid-template-columns:1fr; }
+    .api-showcase{ padding:14px; }
+    .api-title-group{ align-items:flex-start; }
+    .api-icon{ width:42px; height:42px; }
+    .api-header-actions{ flex-direction:column; align-items:stretch; }
+    .api-run,.api-status{ width:100%; text-align:center; justify-content:center; }
+    .api-endpoint-tab{ grid-template-columns:44px minmax(0,1fr); padding:9px; }
+    .api-endpoint-tab code{ font-size:9.5px; }
+    .api-summary{ grid-template-columns:1fr; }
+    .contact-box h2{ font-size:28px; }
+    .contact-links{ gap:10px; }
+    .contact-link{ align-items:flex-start; }
+    footer{ padding-inline:14px; }
+  }
+
+  @media (max-width:380px){
+    .hero h1{ font-size:29px; }
+    .btn{ padding:12px 16px; }
+    .term-body{ font-size:10.5px; }
+    .project-card h3{ font-size:17px; }
+    .contact-box{ padding:28px 16px; }
+  }
+
 </style>
 </head>
 <body>
@@ -1663,7 +1788,7 @@
     </ul>
     <div class="nav-cta">
       <a href="#contact" class="btn btn-primary" style="padding:10px 20px;">Let's talk</a>
-      <button class="burger" id="burger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
     </div>
   </nav>
   <div class="mobile-menu" id="mobileMenu">
@@ -1854,6 +1979,18 @@
 
 <footer><span>Abdul Hanan</span> — Python Backend Developer · © 2026</footer>
 
+<div class="video-modal" id="videoModal" aria-hidden="true">
+  <div class="video-modal-backdrop"></div>
+  <div class="video-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle">
+    <button class="video-modal-close" type="button" aria-label="Close video">×</button>
+    <div class="video-modal-head">
+      <h3 id="videoModalTitle">Project Demo</h3>
+      <span>Interactive portfolio walkthrough</span>
+    </div>
+    <video id="videoModalPlayer" controls autoplay muted loop playsinline></video>
+  </div>
+</div>
+
 <script>
   // header scroll
   const header = document.getElementById('siteHeader');
@@ -1862,8 +1999,20 @@
   // mobile menu
   const burger = document.getElementById('burger');
   const mobileMenu = document.getElementById('mobileMenu');
-  burger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+  burger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', String(open));
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+  }));
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900){
+      mobileMenu.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    }
+  });
 
   // scroll reveal
   const observer = new IntersectionObserver((entries) => {
@@ -2476,17 +2625,7 @@ ${p.api ? `
 </script>
 
 
-<div class="video-modal" id="videoModal" aria-hidden="true">
-  <div class="video-modal-backdrop"></div>
-  <div class="video-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle">
-    <button class="video-modal-close" type="button" aria-label="Close video">×</button>
-    <div class="video-modal-head">
-      <h3 id="videoModalTitle">Project Demo</h3>
-      <span>Interactive portfolio walkthrough</span>
-    </div>
-    <video id="videoModalPlayer" controls autoplay muted loop playsinline></video>
-  </div>
-</div>
+
 
 </body>
 </html>
