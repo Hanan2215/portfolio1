@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head> 
 <meta charset="UTF-8">
@@ -1878,6 +1878,109 @@
   @media (prefers-reduced-motion: reduce){
     .tl-dot::after, .badge-flag, .marquee span::before{ animation:none !important; }
   }
+
+  /* =====================================================
+     RESPONSIVE BALANCE PATCH — layout only, no content/design changes
+     ===================================================== */
+  @media (max-width: 760px){
+    html, body{ width:100%; overflow-x:hidden; }
+    .wrap{ width:100%; padding-left:18px; padding-right:18px; }
+    nav{ width:100%; }
+    .nav-cta .btn-primary{ display:none; }
+
+    .hero-inner{ gap:32px; }
+    .hero-inner > *, .about-grid > *, .project-grid > *, .contact-box > *{ min-width:0; }
+    .term{ width:100%; transform:none; }
+    .term-line{ min-width:0; }
+    .term-line .path{ overflow-wrap:anywhere; word-break:break-word; }
+
+    .about-grid > div:first-child{ padding-left:0; }
+    .experience .section-head{ padding-left:0; }
+    .timeline{ padding-left:28px; }
+    .tl-dot{ left:-28px; }
+
+    .project-card:has(.flagship-preview) .flagship-preview{
+      grid-template-columns:1fr !important;
+      padding:16px;
+      gap:10px;
+    }
+    .project-card:has(.flagship-preview) .flagship-preview-arrow{
+      transform:rotate(90deg);
+      text-align:center;
+    }
+    .project-card:has(.flagship-preview) .flagship-summary{ grid-template-columns:1fr; }
+
+    .api-header-actions{ flex-wrap:wrap; }
+    .api-run{ flex:1 1 auto; }
+    .api-endpoint-tab{ grid-template-columns:46px minmax(0,1fr); }
+    .api-endpoint-tab code, .api-selected-endpoint{ overflow-wrap:anywhere; word-break:break-word; white-space:normal; }
+    .api-pane pre{ overflow-wrap:anywhere; word-break:break-word; }
+
+    .contact-link{ min-width:0; overflow-wrap:anywhere; word-break:break-word; }
+    .blob-1{ left:-220px; }
+    .blob-2{ right:-220px; }
+  }
+
+  @media (max-width: 480px){
+    .wrap{ padding-left:15px; padding-right:15px; }
+    nav{ padding-left:15px; padding-right:15px; }
+    .mobile-menu{ padding-left:15px; padding-right:15px; }
+    .logo{ white-space:nowrap; }
+    .theme-toggle{ height:36px; padding-left:3px; padding-right:5px; }
+    .theme-switch{ width:40px; height:22px; }
+    .theme-switch-knob{ width:16px; height:16px; }
+    html[data-theme="dark"] .theme-switch-knob{ transform:translateX(18px); }
+    .burger{ padding:4px; }
+
+    .hero{ padding-top:100px; }
+    .hero h1 br{ display:none; }
+    .hero h1{ overflow-wrap:anywhere; }
+    .hero p.lede{ max-width:none; }
+    .term-bar{ padding:12px 14px; }
+    .term-bar span{ margin-left:4px; font-size:10.5px; }
+    .term-body{ padding:18px 13px 20px; font-size:11px; }
+    .term-line{ gap:6px; }
+
+    .stats-grid{ grid-template-columns:1fr 1fr; }
+    .stat{ min-width:0; }
+    .about-card, .tl-card, .project-card, .edu-card{ padding:18px; }
+    .timeline{ padding-left:24px; }
+    .tl-dot{ left:-24px; width:16px; height:16px; }
+    .tl-list li{ font-size:13.5px; }
+
+    .pc-top{ align-items:flex-start; }
+    .endpoint{ max-width:100%; }
+    .project-video{ border-radius:11px; }
+    .video-overlay{ inset:auto 8px 8px 8px; padding:8px; }
+    .stack-tags{ gap:6px; }
+
+    .api-showcase{ padding:13px; }
+    .api-title-group{ align-items:flex-start; }
+    .api-header-actions{ gap:8px; }
+    .api-status{ padding:6px 8px; }
+    .api-run{ padding:9px 11px; }
+    .api-summary{ grid-template-columns:1fr !important; }
+    .workflow-step{ grid-template-columns:30px minmax(0,1fr); gap:8px; }
+    .workflow-marker{ width:28px; height:28px; }
+    .workflow-line{ left:13px; }
+
+    .contact-box{ padding:28px 16px; }
+    .contact-links{ gap:10px; }
+    .contact-link{ gap:10px; padding:12px; font-size:12.5px; }
+  }
+
+  @media (max-width: 360px){
+    .wrap{ padding-left:12px; padding-right:12px; }
+    nav{ padding-left:12px; padding-right:12px; }
+    .logo{ font-size:14.5px; gap:6px; }
+    .logo .sq{ width:8px; height:8px; }
+    .nav-cta{ gap:5px; }
+    .theme-switch{ width:38px; }
+    .stats-grid{ grid-template-columns:1fr; }
+    .hero h1{ font-size:23px; }
+    .project-card, .tl-card, .about-card{ padding:16px; }
+  }
+
 </style>
 <script>
   (function(){
